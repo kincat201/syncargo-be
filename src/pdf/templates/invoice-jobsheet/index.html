@@ -1,0 +1,426 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="x-apple-disable-message-reformatting" />
+    <link rel="stylesheet" type="text/css" href=https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet" />
+    <title>Andalin</title>
+    <style type="text/css">
+      html {
+        zoom: 0.7;
+      }
+      * {
+        font-family: 'Open Sans', sans-serif !important;
+        font-style: normal !important;
+        line-height: 21px;
+      }
+      p,
+      b {
+        margin: 0 !important;
+      }
+      input[type='checkbox'] {
+        display: inline-block;
+      }
+      .wrapper {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: #fff !important;
+        /* border: 1px solid #e0e0e0; */
+      }
+      .wrapper__top {
+        max-width: 800px;
+        width: 800px;
+        margin: 0 auto;
+        background-color: #fff !important;
+        /* padding: 12.5px 0px; */
+      }
+      .text-black-1 {
+        color: #1a1a1a;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 15px;
+      }
+      .text-black-2 {
+        color: #1a1a1a;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 20px;
+      }
+      .text-gray-1 {
+        color: #7a7c7e;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        font-style: italic;
+      }
+      .page-break {
+        page-break-after: always;
+      }
+
+      .heading__line-blue {
+        display: inline-block;
+        /* border-bottom: blue 5px solid; */
+        color: #1a1a1a;
+        font-weight: 700;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <table class="wrapper" align="center" role="presentation" cellspacing="0" cellpadding="0" style="padding: 16px">
+      <tr>
+        <td>
+          <table style="max-width: 800px; width: 800px; margin: 0 auto; border-collapse: collapse">
+            <tr>
+              <td valign="top" style="padding: 12px 0px; border-right: 1px #1a1a1a solid; border-bottom: 1px #1a1a1a solid; width: 50%">
+                <p class="text-black-1">Shipper (Consignor)</p>
+                <p class="text-gray-1" style="padding: 2px 0px 12px">Pengirim :</p>
+                <p class="text-black-2">{{details.shipperCompany}} ({{details.shipperName}})</p>
+                <p class="text-black-2">{{details.shipperAddress}}</p>
+                <p class="text-black-2">EMAIL : {{details.shipperEmail}}</p>
+                <p class="text-black-2">PHONE : {{details.shipperPhoneCode}}{{details.shipperPhone}}</p>
+                <p class="text-black-2">ZIP CODE : {{details.shipperZipCode}}</p>
+                <p class="text-black-2">TAX ID : {{details.shipperTaxId}}</p>
+              </td>
+              <td width="300" valign="top" style="padding: 12px; width: 50%; border-bottom: 1px #1a1a1a solid">
+                <table style="margin: 0; border-collapse: collapse;width: 100%;">
+                  <tr>
+                    <td>
+                      <img style="margin-right: 16px; width: 160px;margin-top: -30px;" src="{{details.company.logo}}" alt="logo" height="35" width="160" />
+                    </td>
+                    <td>
+                      <p class="text-black-1" style="font-weight: 700; font-size: 24px; line-height: 29px;margin-bottom: 4px;">HBL No. </p>
+                      <p class="text-black-1" style="font-weight: 600; font-size: 16px; line-height: 29px;border: 1px solid black;padding: 4px;">{{details.houseBl}}</p>
+                    </td>
+                  </tr>
+                </table>
+                <p class="text-black-2">{{details.company.name}}</p>
+                <p class="text-black-2">{{details.company.address}}</p>
+                <p class="text-black-2">{{details.company.phoneCode}}{{details.company.phoneNumber}}</p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table style="max-width: 800px; width: 800px; margin: 0 auto; border-collapse: collapse">
+            <tr>
+              <td valign="top" style="padding: 12px 0px; border-right: 1px #1a1a1a solid; border-bottom: 1px #1a1a1a solid; width: 50%">
+                <p class="text-black-1">Consignee</p>
+                <p class="text-gray-1" style="padding: 2px 0px 12px">Penerima :</p>
+                <p class="text-black-2">{{details.consigneeCompany}} ({{details.consigneeName}})</p>
+                <p class="text-black-2">{{details.consigneeAddress}}</p>
+                <p class="text-black-2">EMAIL : {{details.consigneeEmail}}</p>
+                <p class="text-black-2">PHONE : {{details.consigneePhoneCode}}{{details.consigneePhone}}</p>
+                <p class="text-black-2">ZIP CODE : {{details.consigneeZipCode}}</p>
+                <p class="text-black-2">TAX ID : {{details.consigneeTaxId}}</p>
+              </td>
+              <td valign="top" style="padding: 12px 0px; width: 50%"></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table style="max-width: 800px; width: 800px; margin: 0 auto; border-collapse: collapse">
+            <tr>
+              <td valign="top" style="padding: 12px 0px; border-right: 1px #1a1a1a solid; border-bottom: 1px #1a1a1a solid; width: 50%">
+                <p class="text-black-1">Notify Party (Complete Name and Address)</p>
+                <p class="text-gray-1" style="padding: 2px 0px 12px">Pihak Yang Diberitahu (Nama dan Alamat Lengkap) :</p>
+                <p class="text-black-2">Same as consignee</p>
+                <!-- <p class="text-black-2">{{details.consigneeCompany}} ({{details.consigneeName}})</p>
+                <p class="text-black-2">{{details.consigneeAddress}}</p>
+                <p class="text-black-2">EMAIL : {{details.consigneeEmail}}</p>
+                <p class="text-black-2">PHONE : {{details.consigneePhoneCode}}{{details.consigneePhone}}</p>
+                <p class="text-black-2">ZIP CODE : {{details.consigneeZipCode}}</p>
+                <p class="text-black-2">TAX ID : {{details.consigneeTaxId}}</p> -->
+              </td>
+              <td valign="top" style="padding: 12px 0px; width: 50%"></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table style="max-width: 800px; width: 800px; margin: 0 auto; border-collapse: collapse">
+            <tr>
+              <td valign="top" style="padding: 12px 0px; border-right: 1px #1a1a1a solid; border-bottom: 1px #1a1a1a solid; width: 50%">
+                <table style="width: 100%; margin: 0; border-collapse: collapse">
+                  <tr>
+                    <td valign="top" style="width: 150px">
+                      <p class="text-black-1">Place of Delivery</p>
+                      <p class="text-gray-1" style="padding: 2px 0px 12px">Tempat Pengiriman:</p>
+                      <p class="text-black-2">{{details.countryFrom}}, {{details.cityFrom}}</p>
+                    </td>
+                    <td valign="top" style="width: 150px">
+                      <p class="text-black-1">Place of Receipt</p>
+                      <p class="text-gray-1" style="padding: 2px 0px 12px">Tempat Diterima:</p>
+                      <p class="text-black-2">{{details.countryTo}}, {{details.cityTo}}</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+              <td valign="top" style="width: 50%"></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table style="max-width: 800px; width: 800px; margin: 0 auto; border-collapse: collapse">
+            <tr>
+              <td valign="top" style="padding: 12px 0px; border-right: 1px #1a1a1a solid; border-bottom: 1px #1a1a1a solid; width: 50%">
+                <table style="width: 100%; margin: 0; border-collapse: collapse">
+                  <tr>
+                    <td valign="top" style="width: 150px">
+                      <p class="text-black-1">Vessel Name</p>
+                      <p class="text-gray-1" style="padding: 2px 0px 12px">Nama Kapal:</p>
+                      <p class="text-black-2">{{details.voyageName}}</p>
+                    </td>
+                    <td valign="top" style="width: 150px">
+                      <p class="text-black-1">Voyage Number</p>
+                      <p class="text-gray-1" style="padding: 2px 0px 12px">Nomor Pelayaran:</p>
+                      <p class="text-black-2">{{details.voyageNumber}}</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+              <td valign="top" style="width: 50%"></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table style="max-width: 800px; width: 800px; margin: 0 auto; border-collapse: collapse">
+            <tr>
+              <td valign="top" style="padding: 12px 0px; border-right: 1px #1a1a1a solid; width: 50%">
+                <table style="width: 100%; margin: 0; border-collapse: collapse">
+                  <tr>
+                    <td valign="top" style="width: 150px">
+                      <p class="text-black-1">Port of Loading</p>
+                      <p class="text-gray-1" style="padding: 2px 0px 12px">Pelabuhan Pemuatan:</p>
+                      <p class="text-black-2">{{details.portOfLoading}}</p>
+                    </td>
+                    <td valign="top" style="width: 150px">
+                      <p class="text-black-1">Port of Discharge</p>
+                      <p class="text-gray-1" style="padding: 2px 0px 12px">Pelabuhan Bongkar:</p>
+                      <p class="text-black-2">{{details.portOfDischarge}}</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+              <td valign="bottom" align="center" style="width: 50%; padding-bottom: 30px">
+                <p class="text-black-1" style="font-weight: 600; font-size: 28px; line-height: 20px">HOUSE BILL OF LADING</p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table style="max-width: 800px; width: 800px; margin: 0 auto; border-collapse: collapse">
+            <tr style="border-bottom: 1px #4a4b4c solid">
+              <td valign="top" style="padding: 12px 4px; border-top: 1px #1a1a1a solid; width: 25%">
+                <p class="text-black-1">Marks and Number:</p>
+                <p class="text-gray-1">Tanda dan Nomor:</p>
+              </td>
+              <td valign="top" style="padding: 12px 4px; border-top: 1px #1a1a1a solid; width: 25%">
+                <p class="text-black-1">Quantity and Kind of Packages:</p>
+                <p class="text-gray-1">Jumlah dan Jenis Kemasan:</p>
+              </td>
+              <td valign="top" style="padding: 12px 4px; border-top: 1px #1a1a1a solid; width: 35%">
+                <p class="text-black-1">Product Type, Kind of Goods, Description and HS Code:</p>
+                <p class="text-gray-1">Tipe Produk, Jenis Barang, Uraian Barang, dan HS Code:</p>
+              </td>
+              <td valign="top" style="padding: 12px 4px; border-top: 1px #1a1a1a solid; width: 15%">
+                <p class="text-black-1">Volume and Dimension/Gross Weight:</p>
+                <p class="text-gray-1">Volume dan Dimensi/Berat Kotor:</p>
+              </td>
+            </tr>
+            <!-- # START OF PACKING LIST LOOP -->
+            <tr>
+              <td style="padding: 12px 4px" valign="top"><p class="text-black-2">PO Number : {{details.poNumber}}</p></td>
+              <td style="padding: 12px 4px" valign="top">
+                <p class="text-black-2">{{details.totalQtyType}}</p>
+              </td>
+              <td style="padding: 12px 4px; height: 100px" valign="top">
+                <p class="text-black-2">SAID TO CONTAIN</p>
+                <p class="text-black-2">
+                  {{details.productType}}<br />
+                  {{details.kindOfGoods}}<br />
+                  {{details.description}}<br />
+                  {{details.hsCode}}
+                </p>
+              </td>
+              <td style="padding: 4px" valign="top" class="text-black-2"><p>{{details.estimatedTotalWeight}} Kg</p></td>
+            </tr>
+            <!-- # END OF PACKING LIST LOOP -->
+          </table>
+        </td>
+      </tr>
+    </table>
+
+    <div class="page-break"></div>
+    <table class="wrapper" align="center" role="presentation" cellspacing="0" cellpadding="0" style="padding: 16px">
+      <tr>
+        <td>
+          <table style="max-width: 800px; width: 800px; margin: 0 auto; border-collapse: collapse">
+            <tr style="border-bottom: 1px #4a4b4c solid">
+              <td style="padding: 42px 4px 12px">
+                <p class="text-black-1">Container Number</p>
+                <p class="text-gray-1">Nomor Container:</p>
+              </td>
+              <td style="padding: 42px 4px 12px">
+                <p class="text-black-1">Service Type</p>
+                <p class="text-gray-1">Tipe Service:</p>
+              </td>
+              <td style="padding: 42px 4px 12px">
+                <p class="text-black-1">Prepaid</p>
+                <p class="text-gray-1">Prabayar:</p>
+              </td>
+              <td style="padding: 42px 4px 12px">
+                <p class="text-black-1">Collect</p>
+                <p class="text-gray-1">Menagih:</p>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 12px 4px" valign="top">
+                <p class="text-black-2">{{details.containerNumber}}</p>
+              </td>
+              <td style="padding: 12px 4px" valign="top">
+                <p class="text-black-2">{{details.shipmentType}}</p>
+              </td>
+              <td style="padding: 12px 4px; height: 100px" valign="top">
+                <p class="text-black-2">{{details.blPrepaidType}}</p>
+              </td>
+              <td style="padding: 12 px" valign="top" class="text-black-2"><p>{{details.blCollectType}}</p></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td align="center">
+          <p class="text-black-1" style="font-weight: 700; font-size: 24px; padding: 4px 0px">TOTAL : {{details.totalQtyType}}</p>
+          <p class="text-black-2">according to the declaration of the Shipper (Consignor)</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 20px 0px">
+          <table style="max-width: 800px; width: 800px; margin: 0 auto; border-collapse: collapse">
+            <tr>
+              <td style="padding: 12px; border-top: 1px #1a1a1a solid; border-left: 1px #1a1a1a solid; border-right: 1px #1a1a1a solid; width: 33%">
+                <p class="text-black-1">Freight Amount :</p>
+                <p class="text-gray-1">Jumlah Muatan:</p>
+                <p class="text-black-2" style="padding: 12px 0px 0px 0px">{{details.blFreightAmount}}</p>
+              </td>
+              <td style="padding: 12px; border-top: 1px #1a1a1a solid; border-left: 1px #1a1a1a solid; border-right: 1px #1a1a1a solid; width: 33%">
+                <p class="text-black-1">Freight Payable at :</p>
+                <p class="text-gray-1">Muatan Dibayarkan Pada:</p>
+                <p class="text-black-2" style="padding: 12px 0px 0px 0px">{{details.blFreightPayable}}</p>
+              </td>
+              <td style="padding: 12px; border-top: 1px #1a1a1a solid; border-left: 1px #1a1a1a solid; border-right: 1px #1a1a1a solid; width: 33%">
+                <p class="text-black-1">Place and Date of Issue :</p>
+                <p class="text-gray-1">Tempat dan Tanggal Penerbitan:</p>
+                <p class="text-black-2" style="padding: 12px 0px 0px 0px">{{details.placeOfIssue}}</p>
+              </td>
+            </tr>
+          </table>
+          <table style="max-width: 800px; width: 800px; margin: 0 auto; border-collapse: collapse">
+            <tr>
+              <td valign="top" style="padding: 12px; border-top: 1px #1a1a1a solid; border-left: 1px #1a1a1a solid; border-right: 1px #1a1a1a solid; width: 66%">
+                <p class="text-black-1">Cargo Insurance Through the Unsigned :</p>
+                <p class="text-gray-1">Asuransi Kargo Melalui Yang Tidak Ditandatangani:</p>
+                <table style="margin: 0; border-collapse: collapse">
+                  <tr>
+                    {{#ifCond details.blInsurance "==" 'NOTCOVERED'}}
+                    <td valign="center">
+                      <span>
+                        <!-- <img src="{{company.logo}}" alt="icon" height="28" width="30" /> -->
+                        <input type="checkbox" checked="checked" />
+                      </span>
+                      &nbsp;
+                      <span class="text-black-2" style="display: inline-block; margin-right: 10px">Not covered</span>
+                    </td>
+                    <td valign="center">
+                      <span>
+                        <!-- <img src="{{company.logo}}" alt="icon" height="28" width="30" /> -->
+                        <input type="checkbox" />
+                      </span>
+                      &nbsp;
+                      <span class="text-black-2">Covered according to attached policy</span>
+                    </td>
+                    {{/ifCond}} 
+                    {{#ifCond details.blInsurance "==" 'COVERED'}}
+                    <td valign="center">
+                      <span>
+                        <!-- <img src="{{company.logo}}" alt="icon" height="28" width="30" /> -->
+                        <input type="checkbox" />
+                      </span>
+                      &nbsp;
+                      <span class="text-black-2" style="display: inline-block; margin-right: 10px">Not covered</span>
+                    </td>
+                    &nbsp;
+                    <td valign="center">
+                      <span>
+                        <!-- <img src="{{company.logo}}" alt="icon" height="28" width="30" /> -->
+                        <input type="checkbox" checked="checked" />
+                      </span>
+                      &nbsp;
+                      <span class="text-black-2">Covered according to attached policy</span>
+                    </td>
+                    {{/ifCond}}
+                    {{#ifCond details.blInsurance "==" null}}
+                    <td valign="center">
+                      <span>
+                        <!-- <img src="{{company.logo}}" alt="icon" height="28" width="30" /> -->
+                        <input type="checkbox" />
+                      </span>
+                      &nbsp;
+                      <span class="text-black-2" style="display: inline-block; margin-right: 10px">Not covered</span>
+                    </td>
+                    &nbsp;
+                    <td valign="center">
+                      <span>
+                        <!-- <img src="{{company.logo}}" alt="icon" height="28" width="30" /> -->
+                        <input type="checkbox"/>
+                      </span>
+                      &nbsp;
+                      <span class="text-black-2">Covered according to attached policy</span>
+                    </td>
+                    {{/ifCond}}
+                  </tr>
+                </table>
+              </td>
+              <td valign="top" style="padding: 12px; border-top: 1px #1a1a1a solid; border-left: 1px #1a1a1a solid; border-right: 1px #1a1a1a solid; width: 33%">
+                <p class="text-black-1">Stamp and Signature :</p>
+                <p class="text-gray-1">Cap dan Tanda Tangan:</p>
+              </td>
+            </tr>
+          </table>
+          <table style="max-width: 800px; width: 800px; margin: 0 auto; border-collapse: collapse">
+            <tr>
+              <td valign="top" style="padding: 12px; border: 1px #1a1a1a solid; width: 66%">
+                <p class="text-black-1">For Delivery of Goods Please Apply to :</p>
+                <p class="text-gray-1">Untuk Pengiriman Barang Silahkan Ajukan Ke:</p>
+              </td>
+              <td valign="top" style="padding: 12px; border-bottom: 1px #1a1a1a solid; border-left: 1px #1a1a1a solid; border-right: 1px #1a1a1a solid; width: 33%">
+                <p class="text-black-1">{{details.company.name}}</p>
+                <p class="text-gray-1">as freight forwarder/agent/broker for the Carrier sebagai perusahaan jasa pengurusan transportasi/agen/broker dari Pengangkut</p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+    <div class="page-break"></div>
+    <div class="wrapper">
+      <h2 class="heading__line-blue">Terms and Conditions</h2>
+
+      <p class="text-black-2">{{details.blTerms}}</p>
+    </div>
+  </body>
+</html>

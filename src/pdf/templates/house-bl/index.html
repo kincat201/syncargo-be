@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style type="text/css">
+      html {
+        zoom: 0.8;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        color: #1a1a1a !important;
+        font-size: 12px;
+      }
+      .page-break {
+        page-break-after: always;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="width: 100%">
+      <table width="100%" role="presentation" style="border-collapse: collapse">
+        <tr>
+          <td
+            style="
+              border-bottom: 1px solid #1a1a1a;
+              border-right: 1px solid #1a1a1a;
+              padding: 10px 30px 30px 30px;
+            "
+            width="50%"
+          >
+            <p style="font-weight: 700; font-size: 16px">
+              Shipper (Shipper (Consignor))
+            </p>
+            <p>{{ consigneeName }}</p>
+            <p>{{ consigneeAddress }}, {{ consigneeZipCode }}</p>
+            <p>TAX ID: {{ consigneeTaxId }}</p>
+          </td>
+          <td
+            width="50%"
+            style="
+              border-bottom: 1px solid #1a1a1a;
+              padding: 5px 30px 30px 30px;
+            "
+          >
+            <div style="display: flex; align-items: center">
+              <img
+                style="width: 25%; height: 25%; margin-right: 3rem"
+                src="{{ companyLogo }}"
+                alt=""
+              />
+              <div style="display: flex; align-items: center">
+                <p
+                  style="font-size: 24px; font-weight: 700; margin-right: 1rem"
+                >
+                  HBL
+                </p>
+                <div
+                  style="
+                    font-size: 14px;
+                    font-weight: 600;
+                    border: 2px solid #1a1a1a;
+                    padding: 2px;
+                  "
+                >
+                  No. 360 - 023123
+                </div>
+              </div>
+            </div>
+            <p>{{ companyName }}</p>
+            <p>{{ companyAddress }}</p>
+            <p>{{ companyPhoneCode }} {{ companyPhoneNumber }}</p>
+          </td>
+        </tr>
+        <tr>
+          <td
+            style="
+              border-bottom: 1px solid #1a1a1a;
+              border-right: 1px solid #1a1a1a;
+              padding: 10px 30px 30px 30px;
+            "
+            width="50%"
+          >
+            <p style="font-weight: 700; font-size: 16px">
+              Consigned to order of
+            </p>
+            <p>{{ consigneeName }}</p>
+            <p>{{ consigneeAddress}}</p>
+          </td>
+          <td
+            width="50%"
+            style="
+              border-bottom: 1px solid #1a1a1a;
+              padding: 5px 30px 30px 30px;
+            "
+            rowspan="5"
+          >
+            <p style="word-wrap: break-word; margin-top: -19rem">
+              {{ blTerms }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td
+            style="
+              border-bottom: 1px solid #1a1a1a;
+              border-right: 1px solid #1a1a1a;
+              padding: 10px 30px 30px 30px;
+            "
+            width="50%"
+          >
+            <p style="font-weight: 700; font-size: 16px">Notify address</p>
+            <p>{{ consigneeName }}</p>
+            <p>{{ consigneeAddress }}</p>
+          </td>
+        </tr>
+        <tr>
+          <td
+            style="
+              border-bottom: 1px solid #1a1a1a;
+              border-right: 1px solid #1a1a1a;
+              padding: 10px 150px 30px 30px;
+              text-align: right;
+            "
+            width="50%"
+          >
+            <p style="font-weight: 700; font-size: 16px">Place of receipt</p>
+            <p>{{ countryFrom }}, {{ cityFrom }}</p>
+          </td>
+        </tr>
+        <tr>
+          <td
+            style="
+              border-bottom: 1px solid #1a1a1a;
+              border-right: 1px solid #1a1a1a;
+              padding: 10px 150px 30px 30px;
+              text-align: right;
+              display: flex;
+              justify-content: space-between;
+            "
+          >
+            <div style="text-align: center">
+              <p style="font-weight: 700; font-size: 16px">Ocean vessel</p>
+              <p>{{ shippingLine }} {{ shippingNumber }}</p>
+            </div>
+            <div style="text-align: center">
+              <p style="font-weight: 700; font-size: 16px">Port of loading</p>
+              <p>{{ portOfLoading }}, {{ cityFrom }}</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td
+            style="
+              border-bottom: 1px solid #1a1a1a;
+              border-right: 1px solid #1a1a1a;
+              padding: 10px 150px 30px 30px;
+              text-align: right;
+              display: flex;
+              justify-content: space-between;
+            "
+          >
+            <div style="text-align: center">
+              <p style="font-weight: 700; font-size: 16px">Port of discharge</p>
+              <p>{{ portOfDischarge }}</p>
+            </div>
+            <div style="text-align: center">
+              <p style="font-weight: 700; font-size: 16px">Place of delivery</p>
+              <p>{{ countryTo }}, {{ cityTo }}</p>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <table
+        width="100%"
+        style="margin-top: 1rem; margin-bottom: 3rem; border-collapse: collapse"
+      >
+        <thead>
+          <tr style="font-weight: 700; font-size: 11px; text-align: left">
+            <th>Marks and number</th>
+            <th>Number and kind of packages</th>
+            <th>Description of goods</th>
+            <th>Gross weight</th>
+            <th>Measurement</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="text-align: left; border-bottom: 1px solid #e5eaed">
+            <td style="height: 2rem">SSF</td>
+            <td style="height: 2rem">Kind of Goods</td>
+            <td style="height: 2rem">Description (commodity dtl)</td>
+            <td style="height: 2rem">100</td>
+            <td style="height: 2rem">Kg</td>
+          </tr>
+          <tr style="text-align: left; border-bottom: 1px solid #e5eaed">
+            <td style="height: 2rem">SSF</td>
+            <td style="height: 2rem">Kind of Goods</td>
+            <td style="height: 2rem">Description (commodity dtl)</td>
+            <td style="height: 2rem">100</td>
+            <td style="height: 2rem">Kg</td>
+          </tr>
+          <tr style="text-align: left; border-bottom: 1px solid #e5eaed">
+            <td style="height: 2rem">SSF</td>
+            <td style="height: 2rem">Kind of Goods</td>
+            <td style="height: 2rem">Description (commodity dtl)</td>
+            <td style="height: 2rem">100</td>
+            <td style="height: 2rem">Kg</td>
+          </tr>
+          <tr style="text-align: left; border-bottom: 1px solid #e5eaed">
+            <td style="height: 2rem">SSF</td>
+            <td style="height: 2rem">Kind of Goods</td>
+            <td style="height: 2rem">Description (commodity dtl)</td>
+            <td style="height: 2rem">100</td>
+            <td style="height: 2rem">Kg</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

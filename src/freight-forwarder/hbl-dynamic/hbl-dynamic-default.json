@@ -1,0 +1,605 @@
+[
+  {
+    "label": null,
+    "key": "hidden_dummy",
+    "value": "<p class=\"text-xs leading-5\"></p>",
+    "coordinate": {
+      "x": -500,
+      "y": -500
+    },
+    "dimension": {
+      "height": 10,
+      "width": 100
+    },
+    "styleBorder": {
+      "top": true,
+      "left": false,
+      "right": true,
+      "bottom": true
+    }
+  },
+  {
+    "label": "Shiper/Exporter",
+    "key": "blShipperAddress",
+    "value": "<p class=\"text-xs leading-5\">This data is taken from the shipper data in the shipment</p>",
+    "coordinate": {
+      "x": 0,
+      "y": 0
+    },
+    "dimension": {
+      "height": 150,
+      "width": 401
+    },
+    "styleBorder": {
+      "top": true,
+      "left": true,
+      "right": true,
+      "bottom": true
+    }
+  },
+  {
+    "label": null,
+    "key": "",
+    "value": "<p class=\"text-xs leading-5\"></p>",
+    "coordinate": {
+      "x": 400,
+      "y": 0
+    },
+    "dimension": {
+      "height": 110,
+      "width": 398
+    },
+    "styleBorder": {
+      "top": true,
+      "left": true,
+      "right": true,
+      "bottom": true
+    }
+  },
+  {
+    "label": null,
+    "key": "companyDetails",
+    "value": "<p class=\"text-xs leading-5\">PT Eximku Logistik Indonesia</p><p class=\"text-xs leading-5\">Gedung Menara Cardig, Jl. Raya Halim PK</p><p class=\"text-xs leading-5\">+622180877150</p>",
+    "coordinate": {
+      "x": 400,
+      "y": 74
+    },
+    "dimension": {
+      "height": 76,
+      "width": 398
+    },
+    "styleBorder": {
+      "top": false,
+      "left": true,
+      "right": true,
+      "bottom": true
+    }
+  },
+  {
+    "label": null,
+    "key": "companyLogo",
+    "value": "<img class=\"object-cover z-[99999]\" src=\"https://demo-files.syncargo.com/saas/b56e4651e3b886222517d06f511b7276712226f4169208ab14610c64f1c0fec1.blob\">",
+    "coordinate": {
+      "x": 419,
+      "y": 21
+    },
+    "dimension": {
+      "height": 57,
+      "width": 190
+    },
+    "styleBorder": {
+      "top": false,
+      "left": false,
+      "right": false,
+      "bottom": false
+    }
+  },
+  {
+    "label": null,
+    "key": "houseBl",
+    "value": "<h4><strong>No. 000 - 000000</strong></h4>",
+    "coordinate": {
+      "x": 628,
+      "y": 21
+    },
+    "dimension": {
+      "height": 40,
+      "width": 151
+    },
+    "styleBorder": {
+      "top": true,
+      "left": true,
+      "right": true,
+      "bottom": true
+    }
+  },
+  {
+    "label": "Export References",
+    "key": "blExportReferences",
+    "value": "<p class=\"text-xs leading-5\">References Export from ABC<br>References Export from CDE<br>References Export from FGH</p>",
+    "coordinate": {
+      "x": 400,
+      "y": 150
+    },
+    "dimension": {
+      "height": 255,
+      "width": 398
+    },
+    "styleBorder": {
+      "top": false,
+      "left": true,
+      "right": true,
+      "bottom": true
+    }
+  },
+  {
+    "label": "Destination Delivery Agent",
+    "key": "blDeliveryAgent",
+    "value": "<p class=\"text-xs leading-5\">Delivery Agent: Andalin</p>",
+    "coordinate": {
+      "x": 400,
+      "y": 404
+    },
+    "dimension": {
+      "height": 124,
+      "width": 398
+    },
+    "styleBorder": {
+      "top": true,
+      "left": true,
+      "right": true,
+      "bottom": true
+    }
+  },
+  {
+    "label": "Type Of Move",
+    "key": "blReferences",
+    "value": "<p class=\"text-xs leading-5\">Export</p>",
+    "coordinate": {
+      "x": 400,
+      "y": 526
+    },
+    "dimension": {
+      "height": 103,
+      "width": 398
+    },
+    "styleBorder": {
+      "top": true,
+      "left": true,
+      "right": true,
+      "bottom": true
+    }
+  },
+  {
+    "label": "Consignee",
+    "key": "blConsigneeAddress",
+    "value": "<p class=\"text-xs leading-5\">This data is taken from the consignor data in the shipment</p>",
+    "coordinate": {
+      "x": 0,
+      "y": 150
+    },
+    "dimension": {
+      "height": 107,
+      "width": 401
+    },
+    "styleBorder": {
+      "top": false,
+      "left": true,
+      "right": true,
+      "bottom": true
+    }
+  },
+  {
+    "label": "Notify Party",
+    "key": "blNotifyPartyAddress",
+    "value": "<p class=\"text-xs leading-5\">This data is taken from the notify address data in the shipment</p>",
+    "coordinate": {
+      "x": 0,
+      "y": 257
+    },
+    "dimension": {
+      "height": 93,
+      "width": 401
+    },
+    "styleBorder": {
+      "top": false,
+      "left": true,
+      "right": true,
+      "bottom": true
+    }
+  },
+  {
+    "label": null,
+    "key": "",
+    "value": "<p class=\"text-xs leading-5\"></p>",
+    "coordinate": {
+      "x": 0,
+      "y": 344
+    },
+    "dimension": {
+      "height": 95,
+      "width": 401
+    },
+    "styleBorder": {
+      "top": true,
+      "left": true,
+      "right": true,
+      "bottom": true
+    }
+  },
+  {
+    "label": "Place of Receipt",
+    "key": "blPlaceOfReceipt",
+    "value": "<p class=\"text-xs leading-5\">This data is taken from the<br>Place of Receipt in the shipment</p>",
+    "coordinate": {
+      "x": 195,
+      "y": 346
+    },
+    "dimension": {
+      "height": 89,
+      "width": 201
+    },
+    "styleBorder": {
+      "top": false,
+      "left": false,
+      "right": false,
+      "bottom": false
+    }
+  },
+  {
+    "label": "Exporting Carrier/Vessel",
+    "key": "blExportVessel",
+    "value": "<p class=\"text-xs leading-5\">This data is taken from the<br>Ocean vessel in the shipment</p>",
+    "coordinate": {
+      "x": 0,
+      "y": 437
+    },
+    "dimension": {
+      "height": 90,
+      "width": 205
+    },
+    "styleBorder": {
+      "top": true,
+      "left": true,
+      "right": false,
+      "bottom": true
+    }
+  },
+  {
+    "label": "Port of Loading",
+    "key": "portOfLoading",
+    "value": "<p class=\"text-xs leading-5\">This data is taken from the<br>Port of Lading in the shipment</p>",
+    "coordinate": {
+      "x": 195,
+      "y": 437
+    },
+    "dimension": {
+      "height": 90,
+      "width": 206
+    },
+    "styleBorder": {
+      "top": true,
+      "left": false,
+      "right": true,
+      "bottom": true
+    }
+  },
+  {
+    "label": "Port of Discharge",
+    "key": "portOfDischarge",
+    "value": "<p class=\"text-xs leading-5\">This data is taken from the<br>Place of discharge in the shipment</p>",
+    "coordinate": {
+      "x": 0,
+      "y": 526
+    },
+    "dimension": {
+      "height": 103,
+      "width": 196
+    },
+    "styleBorder": {
+      "top": true,
+      "left": true,
+      "right": false,
+      "bottom": true
+    }
+  },
+  {
+    "label": "Place of Delivery",
+    "key": "blPlaceOfDelivery",
+    "value": "<p class=\"text-xs leading-5\">This data is taken from the<br>Place of Delivery in the shipment</p>",
+    "coordinate": {
+      "x": 195,
+      "y": 526
+    },
+    "dimension": {
+      "height": 103,
+      "width": 206
+    },
+    "styleBorder": {
+      "top": true,
+      "left": false,
+      "right": true,
+      "bottom": true
+    }
+  },
+  {
+    "label": null,
+    "value": "<h1 style=\"text-align: center\"><strong>FINAL</strong></h1><p class=\"text-xs leading-5\" style=\"text-align: center\">according to the declaration of the Shipper (Consignor)</p>",
+    "coordinate": {
+      "x": 0,
+      "y": 813
+    },
+    "dimension": {
+      "height": 75,
+      "width": 798
+    },
+    "styleBorder": {
+      "top": true,
+      "left": true,
+      "right": true,
+      "bottom": true
+    }
+  },
+  {
+    "label": "Freight amount",
+    "value": "<p class=\"text-xs leading-5\">Freight amount</p>",
+    "coordinate": {
+      "x": 0,
+      "y": 887
+    },
+    "dimension": {
+      "height": 86,
+      "width": 346
+    },
+    "styleBorder": {
+      "top": true,
+      "left": true,
+      "right": true,
+      "bottom": true
+    }
+  },
+  {
+    "label": "Freight payable at",
+    "key": "blFreightPayable",
+    "value": "<p class=\"text-xs leading-5\">Freight payable at</p>",
+    "coordinate": {
+      "x": 343,
+      "y": 887
+    },
+    "dimension": {
+      "height": 100,
+      "width": 282
+    },
+    "styleBorder": {
+      "top": true,
+      "left": true,
+      "right": true,
+      "bottom": true
+    }
+  },
+  {
+    "label": "Place and date of issue",
+    "key": "",
+    "value": "<p class=\"text-xs leading-5\">Surabaya</p>",
+    "coordinate": {
+      "x": 540,
+      "y": 887
+    },
+    "dimension": {
+      "height": 100,
+      "width": 258
+    },
+    "styleBorder": {
+      "top": true,
+      "left": true,
+      "right": true,
+      "bottom": true
+    }
+  },
+  {
+    "label": "Cargo insurance through the undersigned",
+    "value": "<ul class=\"custom-task-list-hbl\" data-type=\"taskList\"><li data-checked=\"false\" data-type=\"taskItem\"><label><input type=\"checkbox\"><span></span></label><div><p class=\"text-xs leading-5\">Not covered</p></div></li><li data-checked=\"true\" data-type=\"taskItem\"><label><input type=\"checkbox\" checked=\"checked\"><span></span></label><div><p class=\"text-xs leading-5\">Covered according to attached policy</p></div></li></ul>",
+    "coordinate": {
+      "x": 0,
+      "y": 971
+    },
+    "dimension": {
+      "height": 95,
+      "width": 345
+    },
+    "styleBorder": {
+      "top": true,
+      "left": true,
+      "right": true,
+      "bottom": true
+    }
+  },
+  {
+    "label": "Number of original HBL",
+    "value": "<p class=\"text-xs leading-5\">360 - 023123</p>",
+    "coordinate": {
+      "x": 343,
+      "y": 971
+    },
+    "dimension": {
+      "height": 100,
+      "width": 202
+    },
+    "styleBorder": {
+      "top": true,
+      "left": true,
+      "right": true,
+      "bottom": true
+    }
+  },
+  {
+    "label": "Stamp and signature",
+    "value": "<p class=\"text-xs leading-5\">-</p>",
+    "coordinate": {
+      "x": 540,
+      "y": 971
+    },
+    "dimension": {
+      "height": 100,
+      "width": 258
+    },
+    "styleBorder": {
+      "top": true,
+      "left": true,
+      "right": true,
+      "bottom": true
+    }
+  },
+  {
+    "label": "Desciption of Rates and Charges",
+    "key": "blDescOfRatesAndCharges",
+    "value": "<p class=\"text-xs leading-5\">Rates from 88.888</p>",
+    "coordinate": {
+      "x": 0,
+      "y": 1065
+    },
+    "dimension": {
+      "height": 83,
+      "width": 344
+    },
+    "styleBorder": {
+      "top": true,
+      "left": true,
+      "right": true,
+      "bottom": true
+    }
+  },
+  {
+    "label": "Date On",
+    "key": "blReceiptDate",
+    "value": "<p class=\"text-xs leading-5\"></p>",
+    "coordinate": {
+      "x": 343,
+      "y": 1065
+    },
+    "dimension": {
+      "height": 83,
+      "width": 200
+    },
+    "styleBorder": {
+      "top": true,
+      "left": true,
+      "right": true,
+      "bottom": true
+    }
+  },
+  {
+    "label": "Booking Number",
+    "key": "blBookingNumber",
+    "value": "<p class=\"text-xs leading-5\"></p>",
+    "coordinate": {
+      "x": 540,
+      "y": 1065
+    },
+    "dimension": {
+      "height": 83,
+      "width": 258
+    },
+    "styleBorder": {
+      "top": true,
+      "left": true,
+      "right": true,
+      "bottom": true
+    }
+  },
+  {
+    "label": "Marks and number",
+    "key": "blMarkAndNumber",
+    "value": "<p class=\"text-xs leading-5\">SSF</p><p class=\"text-xs leading-5\">SSF</p><p class=\"text-xs leading-5\">SSF</p><p class=\"text-xs leading-5\">SSF</p><p class=\"text-xs leading-5\">SSF</p>",
+    "coordinate": {
+      "x": 0,
+      "y": 628
+    },
+    "dimension": {
+      "height": 186,
+      "width": 158
+    },
+    "styleBorder": {
+      "top": true,
+      "left": true,
+      "right": true,
+      "bottom": true
+    }
+  },
+  {
+    "label": "Number & kind of packages",
+    "key": "blNumberOfPackages",
+    "value": "<p class=\"text-xs leading-5\">Kind of Goods</p><p class=\"text-xs leading-5\">Kind of Goods</p><p class=\"text-xs leading-5\">Kind of Goods</p><p class=\"text-xs leading-5\">Kind of Goods</p><p class=\"text-xs leading-5\">Kind of Goods</p>",
+    "coordinate": {
+      "x": 157,
+      "y": 628
+    },
+    "dimension": {
+      "height": 186,
+      "width": 211
+    },
+    "styleBorder": {
+      "top": true,
+      "left": true,
+      "right": true,
+      "bottom": true
+    }
+  },
+  {
+    "label": "Description of goods",
+    "key": "blDescOfGoods",
+    "value": "<p class=\"text-xs leading-5\">Description (commodity dtl)</p><p class=\"text-xs leading-5\">Description (commodity dtl)</p><p class=\"text-xs leading-5\">Description (commodity dtl)</p><p class=\"text-xs leading-5\">Description (commodity dtl)</p><p class=\"text-xs leading-5\">Description (commodity dtl)</p>",
+    "coordinate": {
+      "x": 367,
+      "y": 628
+    },
+    "dimension": {
+      "height": 186,
+      "width": 184
+    },
+    "styleBorder": {
+      "top": true,
+      "left": true,
+      "right": true,
+      "bottom": true
+    }
+  },
+  {
+    "label": "Gross weight",
+    "key": "blGrossWeight",
+    "value": "<p class=\"text-xs leading-5\">100</p><p class=\"text-xs leading-5\">100</p><p class=\"text-xs leading-5\">100<br>100<br>100</p>",
+    "coordinate": {
+      "x": 550,
+      "y": 628
+    },
+    "dimension": {
+      "height": 186,
+      "width": 127
+    },
+    "styleBorder": {
+      "top": true,
+      "left": true,
+      "right": true,
+      "bottom": true
+    }
+  },
+  {
+    "label": "Measurement",
+    "key": "blVolumetric",
+    "value": "<p class=\"text-xs leading-5\">Kg</p><p class=\"text-xs leading-5\">Kg</p><p class=\"text-xs leading-5\">Kg<br>Kg<br>Kg</p>",
+    "coordinate": {
+      "x": 676,
+      "y": 628
+    },
+    "dimension": {
+      "height": 186,
+      "width": 122
+    },
+    "styleBorder": {
+      "top": true,
+      "left": true,
+      "right": true,
+      "bottom": true
+    }
+  }
+]

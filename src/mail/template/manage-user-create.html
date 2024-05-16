@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    *{
+      color: black;
+    }
+  </style>
+</head>
+<body>
+<div
+        style="
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+      "
+>
+  <div style="font-size: 14px; color: #1A1A1A">
+    <img style="height: 30px" src={{ffLogo}} alt="ff-logo">
+
+    <br />
+    <br />
+    <b>Dear, {{fullName}}</b>
+    <br />
+    <br />
+    <span> {{ffName}} has Invited you to join ({{ffName}}) at <b>{{url}}</b></span>
+    <br />
+    <br />
+    <div style="text-align: center;">
+      <h3>Activate Your Account</h3>
+
+      <div style="padding:20px;background-color: #F0F3FF;border-radius: 6px;">
+        <span>Please click the button below to activate your account.</span>
+        <br />
+        <br />
+        <a href="{{url}}/{{endpoint}}?code={{code}}">
+          <button style="
+              background-color: #3267E3;
+              border-color: #3267E3;
+              color: white;
+              border-radius: 6px;
+              padding: 8px 16px;
+              font-size: 14px;
+            "
+          >
+            Activate Account
+          </button>
+        </a>
+      </div>
+    </div>
+
+    <div style="text-align: center;font-size: 14px; color: #4A4B4C;margin-top:30px;">
+      <span>If you are having any issues with your account, please don’t hesitate to contact us by replying to this mail. </span>
+      <br />
+      <br />
+      <span>Warm Regards, {{ffName}}</span>
+    </div>
+
+    <br/>
+    <hr style="border: 1px solid #DADEE2;"/>
+    <br/>
+
+    <div style="text-align: center;font-size: 14px; color: #4A4B4C;line-height: 24px;">
+      <img style="height: 30px" src={{ffLogo}} alt="ff-logo">
+      <br />
+      <span>@{{year}} PT. {{ffName}}. All Rights Reserved.</span>
+      <br />
+      <span>{{ffAddress}}</span>
+      <br />
+      <span>+{{ffPhoneCode}} {{ffPhoneNumber}}</span>
+      <br />
+      <span>{{ffEmail}}</span>
+    </div>
+  </div>
+</div>
+</body>
+</html>

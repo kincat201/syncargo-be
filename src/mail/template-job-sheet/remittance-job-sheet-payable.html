@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        *{
+            color: black;
+        }
+    </style>
+</head>
+<body>
+<div
+        style="
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+      "
+>
+    <div style="font-size: 14px; color: #1A1A1A">
+        <img style="height: 30px" src={{ffLogo}} alt="ff-logo">
+
+        <br />
+        <br />
+        <b>Dear, {{ ffName }}</b>
+        <br />
+        <br />
+        <span>
+          {{ message }}.
+        </span>
+
+        <br />
+        <br />
+        <span>
+          Kind Regards, <br/>
+          {{ sender.fullName }}
+        </span>
+
+        <br/>
+        <hr style="border: 1px solid #DADEE2;"/>
+        <br/>
+
+        <div style="text-align: center;font-size: 14px; color: #4A4B4C;line-height: 24px;">
+            <img style="height: 30px" src={{ffLogo}} alt="ff-logo">
+            <br />
+            <span>@{{year}} PT. {{ffName}}. All Rights Reserved.</span>
+            <br />
+            <span>{{ffAddress}}</span>
+            <br />
+            <span>+{{ffPhoneCode}} {{ffPhoneNumber}}</span>
+            <br />
+            <span>{{ffEmail}}</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

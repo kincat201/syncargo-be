@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Open+Sans:wght@500&display=swap');
+
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            width: 1000px;
+            padding: 0 10px;
+            font-size: 14px;
+        }
+
+        th {
+            text-align: center;
+            width: 180px;
+            padding: 10px;
+        }
+
+        .cell-padding {
+            text-align: center;
+            width: 180px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<!-- Note :
+Currency Condition divided by 
+table row so that it more readable than 
+making new table for each currency condition. -->
+
+<body>
+    <table>
+        <tr>
+            <td>
+                <img width="100" src={{ffLogo}} alt="" object-fit="contain" ; />
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td style="margin: 10px 0 0 0px; font-size: 14px; font-weight:700">
+                <p>Dear, Admin {{ffName}}</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    There are adjustment made for issued invoice and it needs your approval.
+                </p>
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td style="color: #000000;width: 160px;">
+                {{ referenceCodeLabel }} :
+            </td>
+            <td style="color: #000000;font-weight: 600;">
+                {{ referenceCodeValue }}
+            </td>
+        </tr>
+        <tr>
+            <td style="color: #000000;width: 160px;">
+                Invoice Number :
+            </td>
+            <td style="color: #000000;font-weight: 600;">
+                {{invoiceNumber}}
+            </td>
+        </tr>
+    </table>
+    <!-- condition if both price component and recipient changes -->
+    {{#isBothChanged}}
+    <table style="margin-bottom: 10px;">
+        <tr>
+            <td style="color: #000000;width: 160px;font-weight: 600;">
+                1. New Recipient
+            </td>
+        </tr>
+    </table>
+    {{/isBothChanged}}
+    <!-- end condition if both price component and recipient changes -->
+
+    <!-- condition if both price component and recipient changes OR only price recipient change -->
+    {{#isHeaderInvoiceChanged}}
+    <div
+        style="display: flex;justify-content: center;align-items: center;font-size: 12px;width: 100%;border: #DADEE2;border-style: double; border-width: thin;border-radius: 10px;">
+        <table style="width: 45%;border-spacing: 15px;">
+            <tr>
+                <td style="color: #000000;width: 160px;font-weight: 600;">
+                    {{#isCurrencyChanged}}
+                    <span style="color: #C4232A;">New</span>
+                    {{/isCurrencyChanged}}
+                    Currency
+                </td>
+                <td style="color: #000000;">
+                    {{currency}}
+                </td>
+            </tr>
+            <tr>
+                <td style="color: #000000;font-weight: 600; ">
+                    {{#isExchangeRateChanged}}
+                    <span style="color: #C4232A;">New</span>
+                    {{/isExchangeRateChanged}}
+                    Exchange Rate in IDR
+                </td>
+                <td style="color: #000000;">
+                    {{exchangeRate}}
+                </td>
+            </tr>
+        </table>
+        <hr style="height: 50px;border: 1px solid #BEC2C5;">
+
+        {{#isRecipientCustomer}}
+        <!-- If recipient is customer -->
+        <table style="width: 50%;border-spacing: 15px;">
+            <tr>
+                <td style="color: #000000;width: 150px;font-weight: 600;">
+                    {{#isRecipientChanged}}
+                    <span style="color: #C4232A;">New</span>
+                    {{/isRecipientChanged}}
+                    Recipient
+                </td>
+                <td style="color: #000000;">
+                    {{recipient}}
+                </td>
+            </tr>
+            <tr>
+                <td style="color: #000000;font-weight: 600; ">
+                    Due Date
+                </td>
+                <td style="color: #000000;">
+                    {{dueDate}}
+                </td>
+            </tr>
+        </table>
+        <hr style="height: 50px;border: 1px solid #BEC2C5;">
+        <table style="width: 40%;border-spacing: 15px;">
+            <tr>
+                <td style="font-weight: 600; ">
+                    {{#isReferenceNumberChanged}}
+                    <span style="color: #C4232A;">New</span>
+                    {{/isReferenceNumberChanged}}
+                    Reference Number
+                </td>
+                <td style="color: #000000;">
+                    {{referenceNumber}}
+                </td>
+            </tr>
+            <tr>
+                <td style="color: #000000; ">
+                    &nbsp;
+                </td>
+                <td style="color: #000000;">
+                    &nbsp;
+                </td>
+            </tr>
+        </table>
+        {{/isRecipientCustomer}}
+
+        {{^isRecipientCustomer}}
+        <!-- If recipient is not customer -->
+        <table style="width: 60%;border-spacing: 15px;">
+            <tr>
+                <td style="color: #000000;width: 150px;font-weight: 600;">
+                    {{#isRecipientChanged}}
+                    <span style="color: #C4232A;">New</span>
+                    {{/isRecipientChanged}}
+                    Recipient
+                </td>
+                <td style="color: #000000;">
+                    {{recipient}}
+                </td>
+            </tr>
+            <tr>
+                <td style="color: #000000;font-weight: 600; ">
+                    {{#isRecipientChanged}}
+                    <span style="color: #C4232A;">New</span>
+                    {{/isRecipientChanged}}
+                    Company Name
+                </td>
+                <td style="color: #000000;">
+                    {{companyName}}
+                </td>
+            </tr>
+        </table>
+        <hr style="height: 50px;border: 1px solid #BEC2C5;">
+        <table style="width: 50%;border-spacing: 15px;">
+            <tr>
+                <td style="font-weight: 600;" class="cell-padding">
+                    {{#isReferenceNumberChanged}}
+                    <span style="color: #C4232A;">New</span>
+                    {{/isReferenceNumberChanged}}
+                    Reference Number
+                </td>
+                <td style="color: #000000; " class="cell-padding">
+                    {{referenceNumber}}
+                </td>
+            </tr>
+            <tr>
+                <td style="color: #000000;width: 100px;font-weight: 600;" class="cell-padding">
+                    Due Date
+                </td>
+                <td style="color: #000000;" class="cell-padding">
+                    {{dueDate}}
+                </td>
+            </tr>
+            
+        </table>
+        {{/isRecipientCustomer}}
+    </div>
+    {{/isHeaderInvoiceChanged}}
+    <!-- end condition if both price component and recipient changes OR only price recipient change -->
+
+    <!-- condition if both price component and recipient changes -->
+    {{#isBothChanged}}
+    <table style="margin-bottom: 10px;margin-top: 10px;">
+        <tr>
+            <td style="color: #000000;width: 160px;font-weight: 600;">
+                2. Price Component
+            </td>
+        </tr>
+    </table>
+    {{/isBothChanged}}
+    <!-- end condition if both price component and recipient changes -->
+
+    <!-- condition if both price component and recipient changes OR only price price component change (check with length) -->
+    {{#isPriceComponentChanged}}
+    <div
+        style="width: 100%;font-size: 14px;display: flex;justify-content: center; flex-direction: column; align-items: center;border: #DADEE2;border-style: double; border-width: thin;border-radius: 10px;">
+        <table style="border-collapse: collapse;">
+
+            <thead style="font-weight: 600;border-bottom: 1px solid #DADEE2;" align="center">
+                <th style="color: #000000;">
+                    Price Component
+                </th>
+                <th style="color: #000000;">
+                    UOM
+                </th>
+                <!-- currency condition here -->
+                {{^isCurrencyIDR}}
+                <th style="color: #000000;">
+                    Price in {{currency}}
+                </th>
+                {{/isCurrencyIDR}}
+                <!-- currency condition here -->
+                <th style="color: #000000;">
+                    Price in IDR
+                </th>
+                <th style="color: #000000;">
+                    Qty
+                </th>
+                <th style="color: #000000;">
+                    VAT
+                </th>
+                <th style="color: #000000;">
+                    Amount in {{currency}}
+                </th>
+                <!-- currency condition here -->
+                {{^isCurrencyIDR}}
+                <th style="color: #000000;">
+                    Amount in IDR
+                </th>
+                {{/isCurrencyIDR}}
+                <!-- currency condition here -->
+            </thead>
+
+            <!-- invoicePrices looping here -->
+            {{#invoicePrices}}
+            <tr align="center">
+                <td style="color: #000000;" class="cell-padding">
+                    {{priceComponent}}
+                </td>
+                <td style="color: #000000;" class="cell-padding">
+                    {{uom}}
+                </td>
+                <!-- currency condition here -->
+                {{^isCurrencyIDR}}
+                <td style="color: #000000;" class="cell-padding">
+                    {{price}}
+                </td>
+                {{/isCurrencyIDR}}
+                <!-- currency condition here -->
+                <td style="color: #000000;" class="cell-padding">
+                    {{convertedPrice}}
+                </td>
+                <td style="color: #000000;" class="cell-padding">
+                    {{qty}}
+                </td>
+                <td style="color: #000000;" class="cell-padding">
+                    {{ppn}}%
+                </td>
+                {{^isCurrencyIDR}}
+                <!-- currency condition here -->
+                <td style="color: #000000;" class="cell-padding">
+                    {{subtotalCurrency}}
+                </td>
+                {{/isCurrencyIDR}}
+                <!-- currency condition here -->
+                <td style="color: #000000;" class="cell-padding">
+                    {{subtotal}}
+                </td>
+            </tr>
+            {{/invoicePrices}}
+            <!-- invoicePrices looping here -->
+
+            <!-- total title -->
+            <tr align="left" style="border-top: 1px solid #DADEE2">
+                <td style="color: #000000;" class="cell-padding">
+                    &nbsp;
+                </td>
+                <!-- currency condition here -->
+                {{^isCurrencyIDR}}
+                <td style="color: #000000;" class="cell-padding">
+                    &nbsp;
+                </td>
+                <td style="color: #000000;" class="cell-padding">
+                    &nbsp;
+                </td>
+                {{/isCurrencyIDR}}
+                <!-- currency condition here -->
+                <td style="color: #000000;" class="cell-padding">
+                    &nbsp;
+                </td>
+                <td style="color: #000000;" class="cell-padding">
+                    &nbsp;
+                </td>
+                <td style="color: #3267E3;font-weight: 600;font-size: 14px;" class="cell-padding">
+                    Total
+                </td>
+            </tr>
+            <!-- total title -->
+
+            <tr align="center">
+                <td style="color: #000000;" class="cell-padding">
+                    &nbsp;
+                </td>
+                <!-- currency condition here -->
+                {{^isCurrencyIDR}}
+                <td style="color: #000000;" class="cell-padding">
+                    &nbsp;
+                </td>
+                <td style="color: #000000;" class="cell-padding">
+                    &nbsp;
+                </td>
+                {{/isCurrencyIDR}}
+                <!-- currency condition here -->
+                <td style="color: #000000;" class="cell-padding">
+                    &nbsp;
+                </td>
+                <td style="color: #000000;" class="cell-padding">
+                    &nbsp;
+                </td>
+                <td style="color: #000000;" class="cell-padding">
+                    Subtotal
+                </td>
+                <td style="color: #000000;" class="cell-padding">
+                    IDR
+                </td>
+                <td style="color: #000000;" class="cell-padding">
+                    {{subtotal}}
+                </td>
+
+            </tr>
+            <tr align="center">
+                <td style="color: #000000;" class="cell-padding">
+                    &nbsp;
+                </td>
+                <!-- currency condition here -->
+                {{^isCurrencyIDR}}
+                <td style="color: #000000;" class="cell-padding">
+                    &nbsp;
+                </td>
+                <td style="color: #000000;" class="cell-padding">
+                    &nbsp;
+                </td>
+                {{/isCurrencyIDR}}
+                <!-- currency condition here -->
+                <td style="color: #000000;" class="cell-padding">
+                    &nbsp;
+                </td>
+                <td style="color: #000000;" class="cell-padding">
+                    &nbsp;
+                </td>
+                <td style="color: #000000;" class="cell-padding">
+                    Total Vat
+                </td>
+                <td style="color: #000000;" class="cell-padding">
+                    IDR
+                </td>
+                <td style="color: #000000;" class="cell-padding">
+                    {{totalVat}}
+                </td>
+
+            </tr>
+
+            <tr align="center" style="color: #3267E3;font-weight: 700;">
+                <td class="cell-padding">
+                    &nbsp;
+                </td>
+                <!-- currency condition here -->
+                {{^isCurrencyIDR}}
+                <td class="cell-padding">
+                    &nbsp;
+                </td>
+                <td class="cell-padding">
+                    &nbsp;
+                </td>
+                {{/isCurrencyIDR}}
+                <!-- currency condition here -->
+                <td class="cell-padding">
+                    &nbsp;
+                </td>
+                <td class="cell-padding">
+                    &nbsp;
+                </td>
+                <td class="cell-padding">
+                    Grand Total in IDR
+                </td>
+                <td class="cell-padding">
+                    IDR
+                </td>
+                <td class="cell-padding">
+                    {{total}}
+                </td>
+            </tr>
+            <!-- currency condition here -->
+            {{^isCurrencyIDR}}
+            <tr align="center" style="color: #673C86;font-weight: 700;">
+                <td class="cell-padding">
+                    &nbsp;
+                </td>
+                <td class="cell-padding">
+                    &nbsp;
+                </td>
+                <td class="cell-padding">
+                    &nbsp;
+                </td>
+                <td class="cell-padding">
+                    &nbsp;
+                </td>
+                <td class="cell-padding">
+                    &nbsp;
+                </td>
+                <td class="cell-padding">
+                    Grand Total in {{currency}}
+                </td>
+                <td class="cell-padding">
+                    {{currency}}
+                </td>
+                <td class="cell-padding">
+                    {{totalCurrency}}
+                </td>
+            </tr>
+            {{/isCurrencyIDR}}
+            <!-- currency condition here -->
+        </table>
+    </div>
+    {{/isPriceComponentChanged}}
+</body>
+<table align="center" style="border-spacing: 22px;font-size: 14px;">
+    <tr>
+        <td align="center">
+            We will be informing you of the following updates. If you have any questions or concerns, please contact our
+            team.
+        </td>
+    </tr>
+</table>
+<hr style="margin: 10px 0 40px 0;" />
+<footer style="font-size: 14px;">
+    <table align="center" style="border-spacing: 22px;">
+        <tr>
+            <td align="center">
+                <img width="100" src={{ffLogo}} alt="" object-fit="contain" ; />
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                @2022 PT.{{ffName}}. All Rights Reserved.
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                {{ffAddress}}
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                +{{ffPhoneCode}}{{ffPhoneNumber}}
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                {{ffEmail}}
+            </td>
+        </tr>
+    </table>
+</footer>
+
+</html>

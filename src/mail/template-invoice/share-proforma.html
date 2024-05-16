@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans:wght@500&display=swap" rel="stylesheet">
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Open+Sans:wght@500&display=swap');
+        body {
+            width: 900px;
+            padding: 0 10px;
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+        }
+
+        .label-status {
+            box-sizing: border-box;
+            color: #FD9E00;
+
+            /* Auto layout */
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 4px 12px;
+            gap: 10px;
+
+            width: fit-content;
+            height: 28px;
+
+            /* Other 2/ Surface */
+
+            background: #FAEBD2;
+            /* Other 2/ Surface */
+
+            border: 1px solid #FAEBD2;
+            border-radius: 11px;
+
+            /* Inside auto layout */
+
+            flex: none;
+            order: 0;
+            flex-grow: 0;
+
+            margin-bottom: 20px;
+        }
+
+        .table-detail td {
+            padding-bottom: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>
+                <img width="150" src={{ffLogo}} alt="" object-fit="contain" ; />
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td style="font-family: 'Inter', sans-serif; font-size: larger;">
+                <p style="font-weight: bold;"">
+                    Dear, {{customerName}}
+                </p>
+                <p>
+                    Enclosed is your shipment proforma invoice. We will issued the final invoice once you approve this
+                    proforma invoice.
+                </p>
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td>
+                <h3 style=" font-weight: bold; font-family: 'Inter' , sans-serif; font-size: larger;">
+                    Proforma Invoice Details
+                    </h3>
+            </td>
+        </tr>
+    </table>
+    <div style="padding:15px;background-color: #F0F3FF;border-radius: 6px;">
+        <span class="label-status" style="text-transform: capitalize;">{{invoiceProcess}}</span>
+        <table class="table-detail" style="width: 100%;border: 0px;margin-bottom: 20px;" cellspacing="0" cellpadding="0"
+            border="0">
+            <tr>
+                <td style="width: 30%;">RFQ Number : </td>
+                <td>{{rfqNumber}}</td>
+            </tr>
+            <tr>
+                <td style="width: 30%;">Invoice Number : </td>
+                <td>{{invoiceNumber}}</td>
+            </tr>
+        </table>
+    </div>
+</body>
+<table align="center" style="border-spacing: 22px;font-family: 'Inter', sans-serif; font-size: larger;font-size: 15px;">
+    <tr>
+        <td align="center">
+            If you are having any issues with your account, please don’t hesitate to contact us by replying to this
+            mail.
+        </td>
+    </tr>
+    <tr>
+        <td align="center">
+            Warm Regards, {{ ffName }}
+        </td>
+    </tr>
+</table>
+<hr style="margin: 20px 0 40px 0;" />
+<footer>
+    <table align="center" style="border-spacing: 12px;font-size: 15px;font-family: 'Inter', sans-serif;">
+        <tr>
+            <td align="center">
+                <img width="100" src={{ffLogo}} alt="" object-fit="contain" ; />
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                @{{year}} PT. {{ffName}}. All Rights Reserved.
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                {{ffAddress}}
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                +{{ffPhoneCode}} {{ffPhoneNumber}}
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                {{ ffEmail }}
+            </td>
+        </tr>
+    </table>
+</footer>
+
+</html>

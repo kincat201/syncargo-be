@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      *{
+        color: black;
+      }
+
+      .label-status{
+        box-sizing: border-box;
+        color: #FD9E00;
+
+        /* Auto layout */
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 4px 12px;
+        gap: 10px;
+
+        width: 94px;
+        height: 28px;
+
+        /* Other 2/ Surface */
+
+        background: #FAEBD2;
+        /* Other 2/ Surface */
+
+        border: 1px solid #FAEBD2;
+        border-radius: 11px;
+
+        /* Inside auto layout */
+
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+
+        margin-bottom: 20px;
+      }
+
+      .table-detail td{
+         padding-bottom: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      style="
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <div style="font-size: 14px; color: #1A1A1A">
+        <img style="height: 30px" src={{ffLogo}} alt="ff-logo">
+
+        <br />
+        <br />
+        <b>Dear {{customerName}},</b>
+        <br />
+        <br />
+        <span> We have {{approval}} a quotation with detailed information:</span>
+        <br />
+        <br />
+        <h3>Quotation Details</h3>
+        <div style="padding:20px;background-color: #F0F3FF;border-radius: 6px;">
+          <table
+                class="table-detail"
+                style="width: 100%;border: 0px;margin-bottom: 20px;"
+                cellspacing="0"
+                cellpadding="0"
+                border="0"
+          >
+             <tr>
+               <td style="width: 30%;">RFQ Number: </td>
+               <td>{{rfqNumber}}</td>
+             </tr>
+            <tr>
+              <td style="width: 30%;">Shipment Type: </td>
+              <td>{{shipmentType}}</td>
+            </tr>
+            <tr>
+              <td style="width: 30%;">Route: </td>
+              <td>{{cityFrom}} to {{cityTo}}</td>
+            </tr>
+            <tr>
+              <td style="width: 30%;">Customer Name: </td>
+              <td>{{customerName}}</td>
+            </tr>
+            <tr>
+              <td style="width: 30%;">Email Customer: </td>
+              <td>{{customerEmail}}</td>
+            </tr>
+          </table>
+
+          <!--<a href="{{quotationUrl}}">
+            <button style="
+              background-color: #3267E3;
+              border-color: #3267E3;
+              color: white;
+              border-radius: 6px;
+              padding: 8px 16px;
+              font-size: 14px;
+            "
+            >
+              Review Quotation
+            </button>
+          </a>-->
+        </div>
+
+        <div style="text-align: center;font-size: 14px; color: #4A4B4C;margin-top:30px;">
+          <span>We will be informing you of the following updates. If you have any questions or concerns, please contact our team.</span>
+          <br />
+          <br />
+          <span>Warm Regards, {{ffName}}</span>
+        </div>
+
+        <br/>
+        <hr style="border: 1px solid #DADEE2;"/>
+        <br/>
+
+        <div style="text-align: center;font-size: 14px; color: #4A4B4C;line-height: 24px;">
+          <img style="height: 30px" src={{ffLogo}} alt="ff-logo">
+          <br />
+          <span>@{{year}} PT. {{ffName}}. All Rights Reserved.</span>
+          <br />
+          <span>{{ffAddress}}</span>
+          <br />
+          <span>+{{ffPhoneCode}} {{ffPhoneNumber}}</span>
+          <br />
+          <span>{{ffEmail}}</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

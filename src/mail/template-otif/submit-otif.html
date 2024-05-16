@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      *{
+        color: black;
+      }
+
+      .label-status{
+        box-sizing: border-box;
+        color: #FD9E00;
+
+        /* Auto layout */
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 4px 12px;
+        gap: 10px;
+
+        width: 94px;
+        height: 28px;
+
+        /* Other 2/ Surface */
+
+        background: #FAEBD2;
+        /* Other 2/ Surface */
+
+        border: 1px solid #FAEBD2;
+        border-radius: 11px;
+
+        /* Inside auto layout */
+
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+
+        margin-bottom: 20px;
+      }
+
+      .table-detail td{
+         padding-bottom: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      style="
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <div style="font-size: 14px; color: #1A1A1A">
+        <img style="height: 30px" src={{ffLogo}} alt="ff-logo">
+
+        <table align="center">
+          <tr>
+            <td align="center">
+              <table>
+                <tr>
+                  {{#icons}}
+                  <td width="42px">
+                    <img
+                            width="42px"
+                            height="42px"
+                            src={{otifIcon}}
+                            alt=""
+                    />
+                  </td>
+                  {{#line}}
+                  <td width="40px">
+                    <img
+                            style="margin-bottom: 5px"
+                            width="40px"
+                            height="2px"
+                            src={{lineIcon}}
+                            alt=""
+                    />
+                  </td>
+                  {{/line}}
+                  {{/icons}}
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <table align="center">
+          <tr align="center">
+            <td width="78px" align="center"><p>Booked</p></td>
+            <td width="90px" align="center"><p>Scheduled</p></td>
+            {{#isFromDoor}}
+            <td width="78px" align="center"><p>Pickup</p></td>
+            <td width="100px" align="center"><p>Origin Local Handling</p></td>
+            {{/isFromDoor}}
+            <td width="78px" align="center"><p style="margin: 0 10px 0 0">Departure</p></td>
+            <td width="78px" align="center"><p>Arrival</p></td>
+            {{#isToDoor}}
+            <td width="100px" align="center"><p>Destination Local Handling</p></td>
+            <td width="78px" align="center"><p>Delivery</p></td>
+            {{/isToDoor}}
+            <td width="78px" align="center"><p>Completed</p></td>
+          </tr>
+        </table>
+        <hr style="margin: 20px 0 40px 0;"/>
+
+        <br />
+        <br />
+        <b>Dear {{customerName}},</b>
+        <br />
+        <br />
+        <span>
+          {{message}} {{otifStatus}} on {{ffName}} with detailed information:
+        </span>
+        <br />
+        <br />
+        <h3>{{otifStatus}} Details</h3>
+        <div style="padding:20px;background-color: #F0F3FF;border-radius: 6px;">
+          <table
+                class="table-detail"
+                style="width: 100%;border: 0px;margin-bottom: 20px;"
+                cellspacing="0"
+                cellpadding="0"
+                border="0"
+          >
+            <tr>
+              <td style="color: #4A4B4C; font-size: 14px;width: 30%;">
+                RFQ Number :
+              </td>
+              <td style="color: #4A4B4C; font-size: 14px; font-weight: 600;">
+                {{details.rfqNumber}}
+              </td>
+            </tr>
+            <tr>
+              <td style="color: #4A4B4C; font-size: 14px;width: 30%;">
+                Status :
+              </td>
+              <td style="color: #4A4B4C; font-size: 14px; font-weight: 600;">
+                {{otifStatus}}
+              </td>
+            </tr>
+            {{#details.documentDate}}
+            <tr>
+              <td style="color: #4A4B4C; font-size: 14px;width: 30%;">
+                {{otifStatus}} Date :
+              </td>
+              <td style="color: #4A4B4C; font-size: 14px; font-weight: 600;">
+                {{details.documentDate}}
+              </td>
+            </tr >
+            {{/details.documentDate}}
+            {{#details.pickupDate}}
+            <tr>
+              <td style="color: #4A4B4C; font-size: 14px;width: 30%;">
+                {{otifStatus}} Date :
+              </td>
+              <td style="color: #4A4B4C; font-size: 14px; font-weight: 600;">
+                {{details.pickupDate}}
+              </td>
+            </tr>
+            {{/details.pickupDate}}
+            {{#details.pickupTime}}
+            <tr>
+              <td style="color: #4A4B4C; font-size: 14px;width: 30%;">
+                {{otifStatus}} Time :
+              </td>
+              <td style="color: #4A4B4C; font-size: 14px; font-weight: 600;">
+                {{details.pickupTime}}
+              </td>
+            </tr>
+            {{/details.pickupTime}}
+            {{#details.noPeb}}
+            <tr>
+              <td style="color: #4A4B4C; font-size: 14px;width: 30%;">
+                {{pebOrPib}} :
+              </td>
+              <td style="color: #4A4B4C; font-size: 14px; font-weight: 600;">
+                {{details.noPeb}}
+              </td>
+            </tr>
+            {{/details.noPeb}}
+            {{#details.location}}
+            <tr>
+              <td style="color: #4A4B4C; font-size: 14px;width: 30%;">
+                Location :
+              </td>
+              <td style="color: #4A4B4C; font-size: 14px; font-weight: 600;">
+                {{details.location}}
+              </td>
+            </tr>
+            {{/details.location}}
+            {{#details.etd}}
+            <tr>
+              <td style="color: #4A4B4C; font-size: 14px;width: 30%;">
+                Estimation Time of Departure (ETD) :
+              </td>
+              <td style="color: #4A4B4C; font-size: 14px; font-weight: 600;">
+                {{details.etd}} {{details.etdTime}}
+              </td>
+            </tr>
+            {{/details.etd}}
+            {{#details.eta}}
+            <tr>
+              <td style="color: #4A4B4C; font-size: 14px;width: 30%;">
+                Estimation Time of Arrival (ETA) :
+              </td>
+              <td style="color: #4A4B4C; font-size: 14px; font-weight: 600;">
+                {{details.eta}} {{details.etaTime}}
+              </td>
+            </tr>
+            {{/details.eta}}
+            {{#details.driverName}}
+            <tr>
+              <td style="color: #4A4B4C; font-size: 14px;width: 30%;">
+                Driver Name :
+              </td>
+              <td style="color: #4A4B4C; font-size: 14px; font-weight: 600;">
+                {{details.driverName}}
+              </td>
+            </tr>
+            {{/details.driverName}}
+            {{#details.driverPhone}}
+            <tr>
+              <td style="color: #4A4B4C; font-size: 14px;width: 30%;">
+                Driver Phone Number :
+              </td>
+              <td style="color: #4A4B4C; font-size: 14px; font-weight: 600;">
+                {{details.driverPhone}}
+              </td>
+            </tr>
+            {{/details.driverPhone}}
+            {{#details.vehiclePlateNumber}}
+            <tr>
+              <td style="color: #4A4B4C; font-size: 14px;width: 30%;">
+                Vehicle Plate Number :
+              </td>
+              <td style="color: #4A4B4C; font-size: 14px; font-weight: 600;">
+                {{details.vehiclePlateNumber}}
+              </td>
+            </tr>
+            {{/details.vehiclePlateNumber}}
+            {{#details.portOfLoading}}
+            <tr>
+              <td style="color: #4A4B4C; font-size: 14px;width: 30%;">
+                Port of Loading :
+              </td>
+              <td style="color: #4A4B4C; font-size: 14px; font-weight: 600;">
+                {{details.portOfLoading}}
+              </td>
+            </tr>
+            {{/details.portOfLoading}}
+            {{#details.shippingLine}}
+            <tr>
+              <td style="color: #4A4B4C; font-size: 14px;width: 30%;">
+                {{#Air}}
+                Airline
+                {{/Air}}
+                {{#Ocean}}
+                Shipping Line
+                {{/Ocean}}
+              </td>
+              <td style="color: #4A4B4C; font-size: 14px; font-weight: 600;">
+                {{details.shippingLine}}
+              </td>
+            </tr>
+            {{/details.shippingLine}}
+            {{#details.shippingNumber}}
+            <tr>
+              <td style="color: #4A4B4C; font-size: 14px;width: 30%;">
+                {{#Air}}
+                Flight Number :
+                {{/Air}}
+                {{#Ocean}}
+                Voyage Number :
+                {{/Ocean}}
+              </td>
+              <td style="color: #4A4B4C; font-size: 14px; font-weight: 600;">
+                {{details.shippingNumber}}
+              </td>
+            </tr>
+            {{/details.shippingNumber}}
+            {{#details.masterAwb}}
+            <tr>
+              <td style="color: #4A4B4C; font-size: 14px;width: 30%;">
+                MAWB/OBL :
+              </td>
+              <td style="color: #4A4B4C; font-size: 14px; font-weight: 600;">
+                {{details.masterAwb}}
+              </td>
+            </tr>
+            {{/details.masterAwb}}
+            {{#details.houseAwb}}
+            <tr>
+              <td style="color: #4A4B4C; font-size: 14px;width: 30%;">
+                HAWB/FBL :
+              </td>
+              <td style="color: #4A4B4C; font-size: 14px; font-weight: 600;">
+                {{details.houseAwb}}
+              </td>
+            </tr>
+            {{/details.houseAwb}}
+            {{#details.grossWeight}}
+            <tr>
+              <td style="color: #4A4B4C; font-size: 14px;width: 30%;">
+                Gross Weight (Kilograms) :
+              </td>
+              <td style="color: #4A4B4C; font-size: 14px; font-weight: 600;">
+                {{details.grossWeight}}
+              </td>
+            </tr>
+            {{/details.grossWeight}}
+            {{#details.nettWeight}}
+            <tr>
+              <td style="color: #4A4B4C; font-size: 14px;width: 30%;">
+                Nett Weight (Kilograms) :
+              </td>
+              <td style="color: #4A4B4C; font-size: 14px; font-weight: 600;">
+                {{details.nettWeight}}
+              </td>
+            </tr>
+            {{/details.nettWeight}}
+            {{#details.vendor}}
+            <tr>
+              <td style="color: #4A4B4C; font-size: 14px;width: 30%;">
+                Vendor :
+              </td>
+              <td style="color: #4A4B4C; font-size: 14px; font-weight: 600;">
+                {{details.vendor}}
+              </td>
+            </tr>
+            {{/details.vendor}}
+            {{#details.portOfDischarge}}
+            <tr>
+              <td style="color: #4A4B4C; font-size: 14px;width: 30%;">
+                Port of Discharge :
+              </td>
+              <td style="color: #4A4B4C; font-size: 14px; font-weight: 600;">
+                {{details.portOfDischarge}}
+              </td>
+            </tr>
+            {{/details.portOfDischarge}}
+            {{#details.activity}}
+            <tr>
+              <td style="color: #4A4B4C; font-size: 14px;width: 30%;">
+                Activity :
+              </td>
+              <td style="color: #4A4B4C; font-size: 14px; font-weight: 600;">
+                {{details.activity}}
+              </td>
+            </tr>
+            {{/details.activity}}
+          </table>
+
+        </div>
+
+        <div style="text-align: center;font-size: 14px; color: #4A4B4C;margin-top:30px;">
+          <span>We will be informing you of the following updates. If you have any questions or concerns, please contact our team.</span>
+          <br />
+          <br />
+          <span>Warm Regards, {{ffName}}</span>
+        </div>
+
+        <br/>
+        <hr style="border: 1px solid #DADEE2;"/>
+        <br/>
+
+        <div style="text-align: center;font-size: 14px; color: #4A4B4C;line-height: 24px;">
+          <img style="height: 30px" src={{ffLogo}} alt="ff-logo">
+          <br />
+          <span>@{{year}} PT. {{ffName}}. All Rights Reserved.</span>
+          <br />
+          <span>{{ffAddress}}</span>
+          <br />
+          <span>+{{ffPhoneCode}} {{ffPhoneNumber}}</span>
+          <br />
+          <span>{{ffEmail}}</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
